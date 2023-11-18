@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from 'react-router-dom';
+
 const Card = ({ room }) => {
   return (
-    <div className="col-span-1 cursor-pointer group">
+    <Link to={`/room/${room?._id}`} className="col-span-1 cursor-pointer group">
       <div className="flex flex-col gap-2 w-full">
         <div
           className="
@@ -43,7 +45,7 @@ const Card = ({ room }) => {
           <div className="font-light">night</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
