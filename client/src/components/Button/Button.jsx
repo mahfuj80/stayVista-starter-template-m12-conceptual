@@ -25,16 +25,16 @@ const Button = ({ label, onClick, disabled, outline, small, icon: Icon }) => {
       {Icon && (
         <Icon
           size={24}
-          className='
+          className="
               absolute
               left-4
               top-3
-            '
+            "
         />
       )}
       {label}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

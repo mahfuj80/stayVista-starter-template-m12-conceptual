@@ -39,7 +39,7 @@ const RoomDetails = () => {
         <div className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-8">
           <RoomInfo room={room}></RoomInfo>
           <div className="md:col-span-3 order-first md:order-last mb-10">
-            <RoomReservation></RoomReservation>
+            <RoomReservation room={room}></RoomReservation>
           </div>
         </div>
       </div>
