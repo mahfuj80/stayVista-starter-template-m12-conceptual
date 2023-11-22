@@ -6,7 +6,7 @@ const AdminMenu = () => {
     <>
       <MenuItem
         icon={FaUserCog}
-        label="My Listings"
+        label="Manage Users"
         address="/dashboard/manage-users"
       />
     </>

@@ -6,7 +6,7 @@ const GuestMenu = () => {
     <>
       <MenuItem
         icon={BsFingerprint}
-        label="My Listings"
+        label="My Bookings"
         address="/dashboard/my-bookings"
       />
     </>
