@@ -3,8 +3,12 @@ import AddRoomForm from '../../../components/Form/AddRoomForm';
 import { useState } from 'react';
 import { imageUpload } from '../../../api/utils';
 import useAuth from '../../../hooks/useAuth';
+import { addRoom } from '../../../api/rooms';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const AddRoom = () => {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [uploadButtonText, setUploadButtonText] = useState('Upload Image');
@@ -15,6 +19,7 @@ const AddRoom = () => {
   });
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const form = e.target;
     const location = form.location.value;
@@ -50,7 +55,19 @@ const AddRoom = () => {
       description,
       image: imageData?.data?.display_url,
     };
-    console.table(roomData);
+
+    try {
+      const data = await addRoom(roomData);
+      console.log(data);
+      setUploadButtonText('Uploaded!');
+      toast.success('Room Added!');
+      navigate('/dashboard/my-listings');
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Handle date change from react-date-range
