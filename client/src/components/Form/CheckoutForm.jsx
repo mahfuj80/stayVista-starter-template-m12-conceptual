@@ -10,7 +10,6 @@ const CheckoutForm = ({ bookingInfo, closeModal }) => {
   const elements = useElements();
   const { user } = useAuth();
   const [cardError, setCardError] = useState('');
-  // eslint-disable-next-line no-unused-vars
   const [clientSecret, setClientSecret] = useState('');
   const [processing, setProcessing] = useState(false);
 
