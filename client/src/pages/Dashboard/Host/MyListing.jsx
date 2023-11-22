@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import useAuth from '../../../hooks/useAuth';
 import { getHostRooms } from '../../../api/rooms';
-import { da, ro } from 'date-fns/locale';
 import RoomDataRow from '../../../components/Dashboard/TableRows/RoomDataRow';
 
 const MyListing = () => {
