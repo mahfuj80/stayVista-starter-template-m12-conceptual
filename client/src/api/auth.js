@@ -33,6 +33,6 @@ export const getRole = async (email) => {
 
 // get all users
 export const getAllUsers = async () => {
-  const { data } = await axiosSecure(`/users`);
+  const { data } = await axiosSecure('/users');
   return data;
 };
