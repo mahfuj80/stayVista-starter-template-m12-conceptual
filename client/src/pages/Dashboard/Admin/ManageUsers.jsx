@@ -16,7 +16,7 @@ const ManageUsers = () => {
   const {
     data: users = [],
     isLoading,
-    refetch,
+    // refetch,
   } = useQuery({
     queryKey: ['users'],
     queryFn: async () => await getAllUsers(),
@@ -25,6 +25,8 @@ const ManageUsers = () => {
   if (isLoading || loading) {
     return <Loader></Loader>;
   }
+
+  console.log(users);
 
   return (
     <>

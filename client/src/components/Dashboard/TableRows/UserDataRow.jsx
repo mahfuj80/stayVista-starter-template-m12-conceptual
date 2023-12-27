@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import UpdateUserModal from '../../Modal/UpdateUserModal';
+// import UpdateUserModal from '../../Modal/UpdateUserModal';
 
 const UserDataRow = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const modalHandler = () => {
-    //
-  };
+  // const modalHandler = () => {
+  //   // update User Role
+  // };
   return (
     <tr>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -35,12 +35,17 @@ const UserDataRow = ({ user }) => {
             aria-hidden="true"
             className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
           ></span>
-          <span onClick={setIsOpen(true)} className="relative">
+          <span onClick={() => setIsOpen(true)} className="relative">
             Update Role
           </span>
         </span>
         {/* Modal */}
-        <UpdateUserModal></UpdateUserModal>
+        {/* <UpdateUserModal
+          isOpen={isOpen}
+          user={user}
+          setIsOpen={setIsOpen}
+          modalHandler={modalHandler}
+        ></UpdateUserModal> */}
       </td>
     </tr>
   );
